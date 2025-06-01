@@ -1,0 +1,26 @@
+# Military Time
+
+hour = int(input("Starting time (hours): "))
+mins = int(input("Starting time (minutes): "))
+dura = int(input("Event duration (minutes): "))
+
+hour_dur = dura//60
+hour_dur = hour_dur%24
+min_dur = dura%60
+
+mid_hour = hour+hour_dur
+mid_min = mins + min_dur
+
+act_min = 0
+act_hour = 0
+
+if (mid_min > 59):
+    act_min = mid_min-60
+    mid_hour = mid_hour + 1
+
+if (mid_hour > 23):
+    act_hour = mid_hour-24
+else:
+    act_hour = mid_hour
+    
+print(act_hour, act_min, sep=":")
