@@ -1,0 +1,18 @@
+# Bubble Sort Algorithm: User-Interactive Version
+
+the_list = []
+list_len = int(input("Enter the number of elements you want in your list: "))
+swapped = True
+
+for i in range(list_len):
+  the_list.append(float(input("Enter a number you want in your list: ")))
+
+while swapped:
+  swapped = False
+  for i in range(len(the_list) - 1):
+    if the_list[i] > the_list[i+1]:
+      the_list[i], the_list[i+1] = the_list[i+1], the_list[i]
+      swapped = True
+
+print("This is your sorted list in increasing order!")
+print(the_list)
