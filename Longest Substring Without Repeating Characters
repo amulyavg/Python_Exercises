@@ -1,0 +1,16 @@
+def lengthOfLongestSubstring(s):
+  unique_string = []
+  max_len = 0
+  
+  for char in s:
+    if char in unique_string:
+      duplicate = unique_string.index(char)
+      unique_string = unique_string[duplicate+1:]
+    unique_string.append(char)
+    max_len = max(max_len, len(unique_string))
+  return max_len
+
+# Test cases
+print(lengthOfLongestSubstring("abcabcbb"))
+print(lengthOfLongestSubstring("bbbbb"))
+print(lengthOfLongestSubstring("pwwkew"))
